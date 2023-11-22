@@ -608,10 +608,20 @@ h2 {
 }
 
 /* Estilos para telas ainda menores, como smartphones */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
   body {
     font-size: 13px;
 
   }
-
+    .tela-hist {
+      width: 200px;
+      margin-bottom: auto;
+      margin: 0 auto;
+      flex-direction: column;
+      margin: 0 auto;
+      padding: 1vh 0 0 2vh;
+  
+    }
+  
+   
 }
