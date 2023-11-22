@@ -80,9 +80,9 @@ footer {
 nav.menu-lateral {
 	width: 43px;
 	height: 100%;
-	background-color: #000551;
+	background-color: #0919ed;
 	padding: 40px 0 40px 1%;
-	box-shadow: 3px 0 0 #1b0f0f;
+	box-shadow: 3px 0 0 white;
 	position: fixed;
 	top: 0;
 	left: 0;
