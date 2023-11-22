@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastro</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/estilo-paginas.css">
+<!--  CSS do Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<!-- Estilos customizados para esse template -->
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<link href="css/floating-labels - cadastro.css" rel="stylesheet">
+
+<script src="js/menu.js" defer></script>
+<body>
+    <header id="header-menu">
+        <nav class="menu-lateral">
+            <div class="btn-expandir">
+                <i class="bi bi-list" id="btn-exp"></i>
+            </div> <!--btn--expandir-->
+            <ul>
+                <li class="item-menu ">
+                    <a href="index.html">
+                        <span class="icone"><i class="bi bi-house"></i></span>
+                        <span class="txt-link">Home</span>
+                    </a>
+                </li>
+    
+                <li class="item-menu">
+                    <a href="login.html">
+    
+                        <span class="icone"><i class="bi bi-box-arrow-right"></i></span>
+                        <span class="txt-link">Login</span>
+                    </a>
+                </li>
+    
+                <li class="item-menu ativo">
+                    <a href="#">
+                        <span class="icone"><i class="bi bi-nut"></i></span>
+                        <span class="txt-link">Cadastro</span>
+                    </a>
+                </li>
+    
+                <li class="item-menu">
+                    <a href="sobrenos.html">
+    
+                        <span class="icone"><i class="bi bi-vignette"></i></span>
+                        <span class="txt-link">Desenvolvedores</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="historia.html">
+                        <span class="icone"><i class="bi bi-clock-history"></i></span>
+                        <span class="txt-link">Historia</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <form class="form-signin">
+        <div class="text-center mb-4">
+            <h1 class="h3 mb-3 font-weight-normal">CADASTRO</h1>
+        </div>
+    <div class="form-label-group">
+        <input type="text" id="inputNome" class="form-control" placeholder="Nome Completo" required autofocus>
+        <label for="inputNome">Nome Completo</label>
+    </div>
+        <div class="form-label-group">
+            <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de email" required autofocus  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            <label for="inputEmail">Endereço de email</label>
+        </div>
+        <div class="form-label-group">
+            <input type="date" id="inputData" class="form-control" placeholder="Data De Nacimento" required autofocus>
+            <label for="inputData">Data De Nascimneto</label>
+        </div>
+        <div class="form-label-group">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+            <label for="inputPassword">Senha</label>
+        </div>
+        <div class="form-label-group">
+            <input type="password" id="Password" class="form-control" placeholder="Senha" required>
+            <label for="Password"> Confirma Senha</label>
+        </div>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="; 
+        ">CADASTRAR
+        </button>
+    </form>
+</body>
+</html>
