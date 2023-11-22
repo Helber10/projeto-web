@@ -344,10 +344,10 @@ aside input {
 
 
 
+/* Estilos para telas menores que 600px 
 
 @media only screen and (width:600px) {
 
-	/* Estilos para telas menores que 600px */
 	button[type="button"] {
 		background-color: #ff7700;
 		color: #111212;
@@ -358,11 +358,10 @@ aside input {
 	}
 
 	  	aside {
-	  		background-color: red;
-	  		grid-area: c;
-			width: 300px;
-	
-	
+	       background-color: red;
+	  		grid-area: auto;
+			width: 600px;
+			height: 400px;
 	
 	
 	  	}
@@ -373,17 +372,6 @@ aside input {
 
 	}
 
-
-
-
-
-	nav {
-
-		background-color: #251e1e;
-		/*grid-column: 1/2;*/
-		grid-area: ;
-
-	}
 
 	.container-placar div {
 		display: flex;
@@ -417,4 +405,96 @@ aside input {
 		margin-left: 100px;
 
 	}
+}
+*/
+/* Estilos padrão para telas menores */
+@media only screen and (max-width: 600px) {
+	section {
+		grid-template-rows: auto auto auto auto auto auto;
+	}
+
+	nav.menu-lateral.expandir {
+		position: absolute;
+		width: 300px;
+
+	}
+
+	button[type="button"] {
+		background-color: #ff7700;
+		color: #111212;
+		border: none;
+		cursor: pointer;
+		padding: 2px 1px;
+
+	}
+
+	.header-infor {
+		flex-direction: column;
+		margin-left: 0;
+		position: absolute;
+		margin-left: 10%;
+	}
+
+	aside {
+		grid-area: c;
+		width:200px
+		margin: 10px 10px;
+	}
+
+	main {
+		background-color: none;
+		grid-area: auto;
+		display: flex;
+		width: 100px;
+		margin-bottom: 10px;
+		margin-left: 100%;
+		margin-top: 200px;
+
+
+
+	}
+
+	.container-placar {
+		table-layout: 100px;
+
+
+	}
+
+
+	.container-placar div {
+		display: flex;
+		align-items: center;
+		gap: 0rem;
+		height: 1vh;
+		margin-left: 10%;
+		background-color: none;
+
+	}
+
+	.container-placar input {
+		margin-bottom: 1px;
+		width: 20vh;
+		border-radius: 15px;
+	}
+
+	.container-placar button {
+		width: 20vh;
+		margin-bottom: px;
+		border-radius: 15px;
+	}
+
+	#minutes,
+	#seconds {
+		position: relative;
+		font-size: 20px;
+	}
+
+	.separator {
+		font-size: 60px;
+		padding: 0 1px;
+		color: #525763;
+	}
+
+
+	/* Adicione mais ajustes conforme necessário */
 }
