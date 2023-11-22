@@ -10,22 +10,6 @@ html {
   margin: 0;
 }
 
-/* Estilos para telas menores, como tablets */
-@media only screen and (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
-}
-
-/* Estilos para telas ainda menores, como smartphones */
-@media only screen and (max-width: 480px) {
-  body {
-    font-size: 13px;
-
-  }
-
-}
-
 
 
 
@@ -206,7 +190,7 @@ button[type="button"] {
 /*===========Home===============*/
 
 
-#tela-inicial {
+.tela-inicial {
   width: 600px;
   margin: 0 auto;
   flex-direction: column;
@@ -217,13 +201,13 @@ button[type="button"] {
 }
 
 .texto {
-  position: relative;
+  margin-bottom: 20px;
   top: 50%;
   left: 50%;
-  transform: translateY(-50%) translateX(-50%)
+
 }
 
-#tela-inicial h1,
+.tela-inicial h1,
 h2 {
   color: #def7f4;
   margin: 0 auto;
@@ -366,7 +350,7 @@ h2 {
   height: 30vh;
   padding: 20vh 0 0 10vh;
   margin-bottom: 8vh;
-  background-image: url(/img/volei.webp);
+  background-image: url(img/volei.webp);
   background-size: cover;
 }
 
@@ -524,19 +508,7 @@ h2 {
 
   }
 
-  .container-placar {
-    table-layout: 10px;
 
-
-  }
-
-  aside {
-    background-color: ;
-    /*grid-column: 3/4;*/
-    grid-area: a;
-    width: 600px;
-
-  }
 
   a {
     font-size: 10px;
@@ -595,4 +567,51 @@ h2 {
     margin-left: 1%;
 
   }
+
+  /*===============home========*/
+
+    .tela-inicial {
+      width: 200px;
+      margin: 0 auto;
+      flex-direction: column;
+      margin-top: 100px;
+      padding: 2vh 0 0 3vh;
+      background-color: none;
+  
+    }
+  
+    .texto {
+   
+     
+    }
+  
+    #tela-inicial h1,
+    h2 {
+      color: #dedff7;
+      margin: 0 auto;
+      padding: 2vh 0 0 3vh;
+      align-items: center;
+  
+    }
+}
+/* Estilos para telas menores, como tablets */
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+
+    nav.menu-lateral.expandir {
+      position: absolute;
+      width: 300px;
+
+    }
+  }
+}
+
+/* Estilos para telas ainda menores, como smartphones */
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 13px;
+
+  }
+
 }

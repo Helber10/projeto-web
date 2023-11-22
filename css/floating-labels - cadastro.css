@@ -13,7 +13,6 @@ body {
 
 body {
     display: -ms-flexbox;
-    display: flex;
     -ms-flex-align: center;
     align-items: center;
     padding-top: 40px;
@@ -28,6 +27,7 @@ body {
     margin: auto;
     background-color: #EDB900;
     border-radius: 15px;
+    
 }
 
 .form-label-group {
@@ -36,10 +36,7 @@ body {
     
 }
 
-.form-label-group>input,
-.form-label-group>label {
-    padding: var(--input-padding-y) var(--input-padding-x);
-}
+
 
 .form-label-group>label {
     position: absolute;
@@ -48,23 +45,19 @@ body {
     display: block;
     width: 100%;
     margin-bottom: 0;
-    /* Sobrescreve a margem padrão da `<label>` */
+    
     line-height: 1.5;
     color: #000551;
     cursor: text;
-    /* Match the input under the label */
+
     border: 1px solid transparent;
     border-radius: .25rem;
-    transition: all .1s ease-in-out;
+  
 }
 
-.form-label-group input::-webkit-input-placeholder {
-    color: transparent;
-}
 
-.form-label-group input:-ms-input-placeholder {
-    color: transparent;
-}
+
+
 
 .form-label-group input::-ms-input-placeholder {
     color: transparent;
@@ -90,27 +83,40 @@ body {
     color: #777;
 }
 
-/* Fallback for Edge
--------------------------------------------------- */
-@supports (-ms-ime-align: auto) {
-    .form-label-group>label {
-        display: none;
-    }
 
-    .form-label-group input::-ms-input-placeholder {
-        color: #777;
+
+
+
+@media only screen and (max-width: 600px) {
+    section {
+        grid-template-rows: auto auto auto auto auto auto;
     }
+.form-signin {
+    width: 80%;
+    max-width: 300px;
+    padding: 10px;
+    margin: 0 auto;
+    background-color: #EDB900;
+    border-radius: 15px;
+    margin-left: 15%;
 }
 
-/* Fallback for IE
--------------------------------------------------- */
-@media all and (-ms-high-contrast: none),
-(-ms-high-contrast: active) {
-    .form-label-group>label {
-        display: none;
-    }
 
-    .form-label-group input:-ms-input-placeholder {
-        color: #777;
-    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Adicione mais ajustes conforme necessário */
+
