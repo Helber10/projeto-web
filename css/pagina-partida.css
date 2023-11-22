@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400;500;600&family=Orbitron:wght@400;500;600;700;800;900&family=Oswald&display=swap');
 
 html {
@@ -6,15 +5,17 @@ html {
 }
 
 * {
-	 font-family: "Orbitron", sans-serif;
-	 padding: 0;
-	 margin: 0; 
+	font-family: "Orbitron", sans-serif;
+	padding: 0;
+	margin: 0;
 }
+
 * Estilos padrão para telas maiores */ body {
 	font-size: 16px;
 	padding: 0;
 	margin: 0;
 }
+
 section {
 	display: grid;
 	grid-template-columns: 1fr 3fr 1fr;
@@ -27,7 +28,7 @@ section {
 }
 
 .header-infor {
-	background-color:none;
+	background-color: none;
 	/*grid-column:1/4;*/
 	grid-area: c;
 	display: flex;
@@ -39,6 +40,7 @@ section {
 
 
 }
+
 .header-infor li {
 	margin: 8px;
 	font-size: 15px;
@@ -58,7 +60,7 @@ nav {
 
 
 aside {
-	background-color:;
+	background-color;
 	/*grid-column: 3/4;*/
 	grid-area: a;
 	width: 500px;
@@ -110,6 +112,7 @@ ul {
 	height: 100%;
 	list-style-type: none;
 }
+
 ul li.item-menu {
 	transition: .2s;
 }
@@ -286,13 +289,13 @@ button[type="button"] {
 
 /*---------tabelas-------*/
 main {
-	background-color:none ;
+	background-color: none;
 	grid-area: p;
 	display: flex;
 	flex-wrap: wrap;
 	width: 700px;
 	height: 80vh;
-	
+
 
 
 }
@@ -304,22 +307,23 @@ main div {
 	border-radius: 12px;
 	margin: 20px;
 	padding: 10px 0 2px 0px;
-	background-color:none;
+	background-color: none;
 	border-radius: 12px;
 	margin-top: 10%;
 
 }
 
 
-main h1{
+main h1 {
 	background-color: #007bff;
 	height: 1px;
 	font-size: 20px;
 
 
-	
+
 
 }
+
 aside input {
 	margin-bottom: 1px;
 	width: 30vh;
@@ -332,7 +336,7 @@ aside input {
 
 .tabela td {
 	border-radius: px;
-	background-color:nome;
+	background-color: nome;
 	border-radius: 10px;
 	font-size: 20px;
 	margin-bottom: auto;
@@ -341,65 +345,76 @@ aside input {
 
 
 
-@media only screen and ( width: 600px) {
+@media only screen and (width:600px) {
 
 	/* Estilos para telas menores que 600px */
 	button[type="button"] {
-			background-color: #ff7700;
-			color: #111212;
-			border: none;
-			cursor: pointer;
-			padding: 2px 1px;
+		background-color: #ff7700;
+		color: #111212;
+		border: none;
+		cursor: pointer;
+		padding: 2px 1px;
+
+	}
+
+	  	aside {
+	  		background-color: red;
+	  		grid-area: c;
+			width: 300px;
 	
-		}
-			
-.container-placar {
-	table-layout: 100px;
+	
+	
+	
+	  	}
+
+	.container-placar {
+		table-layout: 100px;
 
 
-}
-
-aside {
-	background-color: ;
-	/*grid-column: 3/4;*/
-	grid-area: c;
-	width: 400px;
-	background-color:none;
-	height: 400px;
-	margin: 50px;
-	margin-top: 55%;
+	}
 
 
-}
-.container-placar div {
-	display: flex;
-	align-items: center;
-	gap: 1rem;
-	height: 2vh;
-	margin-left: 5%;
-	background-color: none;
 
-}
-.container-placar input {
-	margin-bottom: 1px;
-	width: 20vh;
-	border-radius: 15px;
-}
 
-.container-placar button {
-	width: 20vh;
-	margin-bottom: px;
-	border-radius: 15px;
-}
-.header-infor {
-    flex-direction: column;
-	background-color: none;
-	grid-area:c ;
 
-	margin: 5px;
-	padding: 2px 0 0 2px;
-	margin-left: 100px;
+	nav {
 
-  }
- 
+		background-color: #251e1e;
+		/*grid-column: 1/2;*/
+		grid-area: ;
+
+	}
+
+	.container-placar div {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		height: 2vh;
+		margin-left: 5%;
+		background-color: none;
+
+	}
+
+	.container-placar input {
+		margin-bottom: 1px;
+		width: 20vh;
+		border-radius: 15px;
+	}
+
+	.container-placar button {
+		width: 20vh;
+		margin-bottom: px;
+		border-radius: 15px;
+	}
+
+	.header-infor {
+		flex-direction: column;
+		background-color: none;
+		grid-area: c;
+
+		margin: 5px;
+		padding: 2px 0 0 2px;
+		margin-left: 100px;
+
+	}
 }
