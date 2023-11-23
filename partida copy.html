@@ -13,7 +13,7 @@
 		rel="stylesheet">
 	<link rel="stylesheet" href="css/pagina-partida.css">
 
-	
+
 
 	<!--scrip Cronomêtro-->
 	<script src="js/cronometro.js" defer></script>
@@ -27,51 +27,46 @@
 <body>
 	<section>
 		<header class="header-infor" id="resultado-header"></header>
-			<nav class="menu-lateral">
-				<div class="btn-expandir">
-					<i class="bi bi-list" id="btn-exp"></i>
-				</div> <!--btn--expandir-->
-				<ul>
-					<li class="item-menu ">
-						<a href="index.html">
-							<span class="icone"><i class="bi bi-house"></i></span>
-							<span class="txt-link">Home</span>
-						</a>
-					</li>
+		<nav class="menu-lateral">
+			<div class="btn-expandir">
+				<i class="bi bi-list" id="btn-exp"></i>
+			</div> <!--btn--expandir-->
+			<ul>
+				<li class="item-menu ">
+					<a href="index.html">
+						<span class="icone"><i class="bi bi-house"></i></span>
+						<span class="txt-link">Home</span>
+					</a>
+				</li>
 
-					<li class="item-menu">
-						<a href="login.html">
+				<li class="item-menu">
+					<a href="login.html">
 
-							<span class="icone"><i class="bi bi-box-arrow-right"></i></span>
-							<span class="txt-link">Login</span>
-						</a>
-					</li>
+						<span class="icone"><i class="bi bi-box-arrow-right"></i></span>
+						<span class="txt-link">Login</span>
+					</a>
+				</li>
 
-					<li class="item-menu">
-						<a href="cadastro.html">
-							<span class="icone"><i class="bi bi-nut"></i></span>
-							<span class="txt-link">Cadastro</span>
-						</a>
-					</li>
+				<li class="item-menu">
+					<a href="cadastro.html">
+						<span class="icone"><i class="bi bi-nut"></i></span>
+						<span class="txt-link">Cadastro</span>
+					</a>
+				</li>
 
-					<li class="item-menu">
-						<a href="historia.html">
-							<span class="icone"><i class="bi bi-clock-history"></i></span>
-							<span class="txt-link">Historia</span>
-						</a>
-					</li>
-				</ul>
-			</nav>
+				<li class="item-menu">
+					<a href="historia.html">
+						<span class="icone"><i class="bi bi-clock-history"></i></span>
+						<span class="txt-link">Historia</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
 
 		<main>
 			<div class="time-container">
 				<h1>TIME A</h1>
-				<div id="tabelaContainer1" title="TIME A"></div>
-			</div>
-
-			<div class="time-container">
-				<h1>TIME B</h1>
-				<div id="tabelaContainer2" title="TIME B"></div>
+				<div id="tabelaContainer" title="TIME A"></div>
 			</div>
 
 
@@ -108,25 +103,31 @@
 			</div>
 		</aside>
 	</section>
+
 	<script>
 		// Extrai os parâmetros da URL
 		const urlParams = new URLSearchParams(window.location.search);
 		const tabela1HTML = urlParams.get('tabela1');
 		const tabela2HTML = urlParams.get('tabela2');
+		// Cria a lista de parâmetros
+		const parametrosList = document.createElement('ul');
+		parametrosList.innerHTML = `
+    <li>Nome da Partida: ${urlParams.get('nomePartida')}</li>
+    <li>Regras Específicas: ${urlParams.get('estilojogo')}</li>
+    <li>Data da Partida: ${urlParams.get('datatenis')}</li>
+    <li>Hora da Partida: ${urlParams.get('horatenis').split('T')[1]}</li>
+    <li>Local da Partida: ${urlParams.get('localtenis')}</li>
+`;
 
 		// Exibe as tabelas na página de resultado
-		document.getElementById('tabelaContainer1').innerHTML = tabela1HTML;
-		document.getElementById('tabelaContainer2').innerHTML = tabela2HTML;
+		document.getElementById('tabelaContainer1').innerText = urlParams.get('tabela1');
+		document.getElementById('tabelaContainer2').innerText = urlParams.get('tabela2');
 
-		// Exibe as informações no cabeçalho da página de resultado
+		// Adiciona a lista ao cabeçalho
 		const resultadoHeader = document.getElementById('resultado-header');
-		resultadoHeader.innerHTML = `
-	        <li>Nome da Partida${urlParams.get('nomePartida')}</li>
-	        <li>Regras Específicas: ${urlParams.get('regrasVolei')}</li>
-	        <li>Data da Partida: ${urlParams.get('dataVolei')}</li>
-	       <li>Hora da Partida: ${urlParams.get('horaVolei').split('T')[1]}</li>
-	        <li>Local da Partida: ${urlParams.get('localVolei')}</li>
-	        `;
+		resultadoHeader.appendChild(parametrosList);
+
+
 	</script>
 </body>
 

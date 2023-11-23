@@ -1,0 +1,12 @@
+
+
+
+body {
+    background-image: url('../img/contrucao.jpg');
+    background-size: cover;
+    /* para cobrir todo o corpo */
+    background-repeat: no-repeat;
+    /* para evitar repetição da imagem */
+    /* Outras propriedades de estilo conforme necessário */
+}
+

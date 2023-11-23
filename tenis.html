@@ -69,67 +69,88 @@
         <div class="organizar-tenis">
             <h2>Partida de Tênis de Mesa</h2>
             <form>
-                <input type="text" id="nome-partida-tenis-mesa" placeholder="Nome da Partida" required>
-                <input type="text" id="estilo-jogo-tenis-mesa" placeholder="Estilo de Jogo" required>
-                <input type="number" id="num-jogadores-tenis-mesa" placeholder="Número de Jogadores" required>
-                <input type="date" id="data-tenis-mesa" placeholder="Data" required>
-                <input type="time" id="hora-tenis-mesa" placeholder="Hora" required>
-                <input type="text" id="local-tenis-mesa" placeholder="Local" required>
+                <input type="text" id="nomepartida" placeholder="Nome da Partida">
+                <textarea id="nomesInput" rows="3" cols="12">
+                        Miguel
+                        Arthur
+                        Gael
+                        Théo
+                        Heitor
+                        Ravi
+                        Davi
+                        Bernardo
+                        Noah
+                        Gabriel
+                        Samuel
+                        Pedro
+                        Anthony
+               
+                    </textarea>
+                <input type="text" id="estilojogo" placeholder="Estilo de Jogo" >
+                <input type="number"id="numjogadores" placeholder="Número de Jogadores" min="1" value="2">
+                <input type="date" id="datatenis" placeholder="Data" >
+                <input type="time" id="horatenis" placeholder="Hora">
+                <input type="text" id="localtenis" placeholder="Local" >
                 <div class="button">
-                    <button onclick="organizarTabelas()">Organizar Partida</button>
+                <button onclick="organizarPartida()">Organizar Partida</button>
                 </div>
             </form>
         </div>
     </div>
     <script>
-        function organizarTabelas() {
+        function organizarPartida(){
             const nomesInput = document.getElementById('nomesInput').value;
             const nomesArray = nomesInput.split('\n').map(nome => nome.trim()).filter(Boolean);
 
-            const nomesPorTabela = parseInt(document.getElementById('nomesPorTabela').value);
+            const numjogadores = parseInt(document.getElementById('numjogadores').value);
+            const nomePartida = document.getElementById('nomepartida').value;
+            const estiloJogo = document.getElementById('estilojogo').value;
+            const data = document.getElementById('datatenis').value;
+            const hora = document.getElementById('horatenis').value;
+            const local = document.getElementById('localtenis').value;
 
-            if (nomesArray.length < nomesPorTabela) {
+            if (nomesArray.length < numjogadores) {
                 alert('Informe pelo menos a quantidade de nomes desejada por tabela.');
                 return;
             }
-
-            const tabelaContainer = document.getElementById('tabelaContainer');
+            
+             const tabelaContainer = document.getElementById('tabelaContainer');
             tabelaContainer.innerHTML = '';
 
-            const numeroDeTabelas = Math.ceil(nomesArray.length / nomesPorTabela);
+            const numeroDeTabelas = Math.ceil(nomesArray.length / numjogadores);
 
             const tabelas = Array.from({ length: numeroDeTabelas }, () => ({ nomes: [] }));
 
-            // Obter valores do formulário
-            const nomePartida = document.getElementById('nome-partida-tenis-mesa').value;
-            const estiloJogo = document.getElementById('estilo-jogo-tenis-mesa').value;
-            const numJogadores = document.getElementById('num-jogadores-tenis-mesa').value;
-            const data = document.getElementById('data-tenis-mesa').value;
-            const hora = document.getElementById('hora-tenis-mesa').value;
-            const local = document.getElementById('local-tenis-mesa').value;
+           
 
             for (let i = 0; i < numeroDeTabelas; i++) {
                 const tabela = document.createElement('table');
                 tabela.className = 'tabela';
 
-                // Adicionar informações do formulário à tabela
-                const infoRow = tabela.insertRow();
-                const infoCell = infoRow.insertCell();
-                infoCell.colSpan = nomesPorTabela;
-                infoCell.textContent = `Nome da Partida: ${nomePartida}, Estilo de Jogo: ${estiloJogo}, Número de Jogadores: ${numJogadores}, Data: ${data}, Hora: ${hora}, Local: ${local}`;
-
-                for (let j = 0; j < nomesPorTabela; j++) {
-                    const nomeIndex = i * nomesPorTabela + j;
+                for (let j = 0; j < numjogadores; j++) {
+                    const nomeIndex = i * numjogadores + j;
                     if (nomeIndex < nomesArray.length) {
                         const celula = tabela.insertRow().insertCell();
                         celula.textContent = nomesArray[nomeIndex];
                     }
                 }
 
-                tabelaContainer.appendChild(tabela);
+               tabelaContainer.appendChild(tabela);
             }
-        } const url = `partidatenis.html?nomePartida=${nomePartida}&estiloJogo=${estiloJogo}&numJogadores=${numJogadores}&data=${data}&hora=${hora}&local=${local}`;
+             redirecionarPagina(tabelaContainer.innerHTML);
 
+            window.location.href = `partida1.html?tabela1=${tabelaPrincipal1.outerHTML}&tabela2=${tabelaPrincipal2.outerHTML}&nomePartida=${nomePartida}&estiloJogo=${regrasVolei}&data=${dataVolei}&hora=${horaVolei}&local=${localVolei}`;
+             function redirecionarPagina(tabelaHTML) {
+                // Encode tabelaHTML para evitar problemas de caracteres especiais na URL
+                const tabelaHTMLCodificado = encodeURIComponent(tabelaHTML);
+                const url = `partida1.html?tabela=${tabelaHTMLCodificado}`;
+                window.location.href = url;
+            }
+
+              
+        } 
+        
+     
 
     </script>
 </body>
