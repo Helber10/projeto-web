@@ -61,34 +61,32 @@
             </ul>
         </nav>
     </header>
-    <form class="form-signin">
+    <form class="form-signin" id="registro-form" action="">
         <div class="text-center mb-4">
             <h1 class="h3 mb-3 font-weight-normal">CADASTRO</h1>
         </div>
     <div class>
-        <input type="text" id="inputNome" class="form-control" placeholder="Nome Completo" required autofocus>
-        <label for="inputNome">Nome Completo</label>
+        <input type="text" id="nome" class="form-control" placeholder="Nome Completo" data-required>
+       
     </div>
         <div class>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de email" required autofocus  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-            <label for="inputEmail">Endereço de email</label>
+            <input type="email" id="email" class="form-control" placeholder="Endereço de email "  data-email-validate pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
         </div>
         <div class>
-            <input type="date" id="inputData" class="form-control" placeholder="Data De Nacimento" required autofocus>
-            <label for="inputData">Data De Nascimneto</label>
+            <input type="date" id="data" class="form-control" placeholder="Data De Nacimento"  data-required data-only-letters>
         </div>
         <div class>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
-            <label for="inputPassword">Senha</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" data-password-validate data-required>
         </div>
         <div class>
-            <input type="password" id="Password" class="form-control" placeholder="Senha" required>
-            <label for="Password"> Confirma Senha</label>
+            <input type="password" id="passwordconfirmation" class="form-control" name="passconfirmation"  placeholder="Digite novamente sua senha" data-equal="password">
         </div>
         
-        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="; 
-        ">CADASTRAR
+        <button   id="btn-submit"class="btn btn-lg btn-primary btn-block" type="submit" onclick="; 
+        "  value="Registrar">CADASTRAR
         </button>
     </form>
+    <p class="error-validation template"></p>
+    <script  src="js/validaCadastro.js"></script>
 </body>
 </html>
